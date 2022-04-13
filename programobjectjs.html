@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <center>
+        <h1>Data Siswa</h1>
+        <h3>SMK Assalaam Bandung</h3>
+        <hr>
+    </center>
+    <form name="fform">
+        <p>Nisn: <input type="text" size="11" name="nama"></p>
+        <p>Nama: <input type="text" size="25" name="alamat"></p>
+        <p>Jenis Kelamin<select name="Kelamin" size="1">
+            <option value="Laki-Laki">Laki-Laki</option>
+            <option value="Perempuan">Perempuan</option>
+            </select>
+            <p>Agama<select name="agama" size="1">
+                <option value="Islam">Islam</option>
+                <option value="Kristen">kristen</option>
+                <option value="Hindu">Hindu</option>
+                <option value="Budha">Budha</option>
+                </select>
+                <p>Status:</p>
+                <p><input type="radio" value="admin" name="admin" onclick="radio_box(form)">Sudah Menikah</p>
+                <p>Jurusan Yang Diminati: <select name="Jurusan">
+                    <option value="Teknik Informatika">Teknik Informatika</option>
+                    <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
+                    <option value="TBSM">TBSM</option>
+                    </select>
+                </p> 
+                <label>Masukkan Komentar</label>
+            <textarea name="ket" id="" cols="30" rows="5"></textarea>
+        <p><input type="button" value="kirim" onclick="tekan()">
+        <button type="reset">Ulang</button></p>
+        <h3>Hasil Data Yang Masuk:</h3>
+        <hr>
+        <p>Jadi Nisn Anda Adalah: <input type="text" size="11" name="onama"></p>
+        <p>Nama Anda Adalah: <input type="text" size="25" name="oalamat"></p>
+        <p>Jenis Kelamin:<input type="text" name="Okelamin" size="30"></p>
+        <p>Agama Anda <input type="text" name="Oagama" size="30"></p>
+        <p>Status Anda <input type="text" name="Ostatus"></p>
+        <p>Jurusan Anda:<input type="text" name="Ojurusan" size="30"></p>
+        <p>Komentar Anda:<textarea name="Oket" id="" cols="30" rows="5"></textarea></p>
+    </form>
+    <script>
+        function tekan()
+        {
+            var namastr = (document.fform.nama.value);
+            var alamatstr = (document.fform.alamat.value);
+            var kelaminstr = (document.fform.Kelamin.value);
+            var agamastr = (document.fform.agama.value);
+            var jurusanstr = (document.fform.Jurusan.value);
+            var ketstr = (document.fform.ket.value);
+            document.fform.onama.value = namastr;
+            document.fform.oalamat.value = alamatstr;
+            document.fform.Okelamin.value = kelaminstr;
+            document.fform.Oagama.value = agamastr;
+            document.fform.Ojurusan.value = jurusanstr;
+            document.fform.Oket.value = ketstr;
+        }
+        function radio_box(form)
+        {
+            var ket = "";
+            if (form.admin.checked == true)
+            {
+                ket = "Menikah";
+            }
+            else
+            {
+                ket = "Belum Menikah";
+            }
+            document.fform.Ostatus.value = ket;
+        }
+    </script>
+</body>
+</html>

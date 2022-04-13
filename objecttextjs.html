@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memasukkan Data Dengan Object Text</title>
+</head>
+<body>
+    <h1>Memasukkan Nama Dengan Object Text</h1>
+    <hr>
+    <form name="fform">
+        <p>Nama Anda: <input type="text" size="11" name="nama"></p>
+        <p>alamat: <input type="text" size="25" name="alamat"></p>
+        <input type="button" value="kirim" onclick="tekan()">
+        <button type="reset">Ulang</button>
+        <h3>Output</h3>
+        <p>Jadi Nama Anda Adalah: <input type="text" size="11" name="onama"></p>
+        <p>Alamat Anda Di: <input type="text" size="25" name="oalamat"></p>
+    </form>
+    <script>
+        function tekan()
+        {
+            var namastr = (document.fform.nama.value);
+            var alamatstr = (document.fform.alamat.value);
+            document.fform.onama.value = namastr;
+            document.fform.oalamat.value = alamatstr;
+        }
+    </script>
+</body>
+</html>
